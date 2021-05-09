@@ -24,19 +24,26 @@ namespace Person
         {
             InitializeComponent();
             PersonClass.InitPeople();
-            People.DataContext = PersonClass.AllPeople;
+            PersonClass p = new PersonClass();
+            People.DataContext = p;
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            People.SelectedIndex = 0;
-           
+            People.SelectedIndex = 0; 
         }
 
         private void Person_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            PersonClass u = ((KeyValuePair<string, PersonClass>)(sender as ListBox).SelectedItem).Value;
-            DataContext = u;
+            PersonClass pc = (PersonClass)((sender as ListBox).SelectedItem);
+            DataContext = pc;
+        }
+
+        private void People_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            PersonClass pc = (PersonClass)((sender as ListBox).SelectedItem);
+           PersonEdit pce = new PersonEdit(pc);
+            pce.ShowDialog();
         }
     }
 }
