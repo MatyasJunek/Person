@@ -39,6 +39,7 @@
         </StackPanel>
         <Label Content="{Binding Surname}" Grid.Column="1" Grid.Row="1"/>
         <Label Content="{Binding Date}" Grid.Column="1" Grid.Row="2"/>
-        
+        <Button Content="Add" Grid.Column="1" Grid.Row="4" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="50" Width="50" Click="Button_Click"/>
+
     </Grid>
 </Window>

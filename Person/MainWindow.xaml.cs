@@ -41,8 +41,14 @@ namespace Person
 
         private void People_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            PersonClass pc = (PersonClass)((sender as ListBox).SelectedItem);
-           PersonEdit pce = new PersonEdit(pc);
+          PersonClass pc = (PersonClass)((sender as ListBox).SelectedItem);
+          PersonEdit pce = new PersonEdit(pc);
+            pce.ShowDialog();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            PersonEdit pce = new PersonEdit();
             pce.ShowDialog();
         }
     }
